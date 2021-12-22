@@ -38,8 +38,11 @@ container.innerHTML = people
 const startSlider = (type) => {
   const active = document.querySelector(".active");
   const last = document.querySelector(".last");
-  const next = active.nextElementSibling;
+  let next = active.nextElementSibling;
 
+  if (!next) {
+    next = container.firstElementChild;
+  }
   active.classList.remove(["active"]);
   last.classList.remove(["last"]);
   next.classList.remove(["next"]);
